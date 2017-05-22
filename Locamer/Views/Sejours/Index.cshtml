@@ -26,10 +26,15 @@
         <th>
             @Html.DisplayNameFor(model => model.type_sejour.lib_sejour)
         </th>
+        <th>
+            Nombre d'emplacements
+        </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@{
+    foreach (var item in Model)
+    {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.date_debut)
@@ -47,11 +52,16 @@
             @Html.DisplayFor(modelItem => item.type_sejour.lib_sejour)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_sejour }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_sejour }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_sejour })
+            @Html.DisplayFor(modelItem => item.mobile_home.Count)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.id_sejour }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id_sejour }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id_sejour })
         </td>
     </tr>
-}
+        }
+    }
 
 </table>
