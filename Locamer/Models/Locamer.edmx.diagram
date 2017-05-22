@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="30672c75e94a483fbf693de39b8c215c" Name="Diagram1">
+      <Diagram DiagramId="30672c75e94a483fbf693de39b8c215c" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="LocamerModel.Client" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="LocamerModel.info_option" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="LocamerModel.mobile_home" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
