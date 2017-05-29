@@ -1,5 +1,6 @@
 ﻿@model Locamer.Models.Sejour
 
+
 @{
     ViewBag.Title = "Details";
 }
@@ -49,10 +50,32 @@
         <dd>
             @Html.DisplayFor(model => model.type_sejour.lib_sejour)
         </dd>
-
     </dl>
+
+    <table class="table">
+        <tr>
+            <th>Séjour</th>
+            <th>Emplacement</th>
+            <th>Catégorie</th>
+            <th>Prix</th>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayFor(model => model.type_sejour.lib_sejour)
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.)
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.type_sejour.lib_sejour)
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.prix_sejour)
+            </th>
+        </tr>
+        </table>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id_sejour }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_sejour })
     @Html.ActionLink("Back to List", "Index")
 </p>

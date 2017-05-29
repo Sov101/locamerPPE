@@ -33,6 +33,8 @@ namespace Locamer.Controllers
             {
                 return HttpNotFound();
             }
+
+            sejour.prix_sejour = sejour.CalculPrix();
             return View(sejour);
         }
 
@@ -132,5 +134,6 @@ namespace Locamer.Controllers
             }
             base.Dispose(disposing);
         }
+
     }
 }

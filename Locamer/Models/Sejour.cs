@@ -22,11 +22,13 @@ namespace Locamer.Models
         }
     
         public int id_sejour { get; set; }
-        public Nullable<System.DateTime> date_debut { get; set; }
-        public Nullable<System.DateTime> date_fin { get; set; }
+        public System.DateTime date_debut { get; set; }
+        public System.DateTime date_fin { get; set; }
         public Nullable<int> id_client { get; set; }
         public Nullable<int> id_tsejour { get; set; }
         public Nullable<int> id_option { get; set; }
+
+        public double prix_sejour { get; set; }
     
         public virtual Client Client { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -34,5 +36,26 @@ namespace Locamer.Models
         public virtual type_sejour type_sejour { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<mobile_home> mobile_home { get; set; }
+
+        public double CalculPrix()
+        {
+            double prixTarif = 0;
+            double prixOption = 0;
+            foreach (var emplacement in mobile_home)
+                prixTarif += emplacement.tarif.prix_jour * (double)this.NbreJours();
+            foreach (var option in info_option)
+                prixOption += option.option.prix_jour;
+            // double prix = ((prixOption + prixTarif) + NbreJours()) * type_sejour.coeff;
+            return prixTarif;
+        }
+
+        public int NbreJours()
+        {
+            TimeSpan jours = date_fin - date_debut;
+            int duree = (int)jours.TotalDays;
+            if (duree < 1)
+                duree = 1;
+            return duree;
+        }
     }
 }

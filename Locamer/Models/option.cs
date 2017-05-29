@@ -22,7 +22,7 @@ namespace Locamer.Models
     
         public string libelle_option { get; set; }
         public int id_option { get; set; }
-        public Nullable<int> prix_jour { get; set; }
+        public int prix_jour { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<info_option> info_option { get; set; }
